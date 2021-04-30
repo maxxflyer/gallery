@@ -309,8 +309,8 @@ const grid=[
 
 				const loader = new VOXLoader();
     loader.load( 'https://ipfs.io/ipfs/'+getUrlVars()['vox'], function ( chunks ) {
-        for ( let x = 0; x < 2; x ++ )
-	for ( let y = 0; y < 2; y ++ )
+        for ( let x = 0; x < 5; x ++ )
+	for ( let y = 0; y < 5; y ++ )
         for ( let i = 0; i < chunks.length; i ++ ) {
 
             const chunk = chunks[ i ];
@@ -321,8 +321,9 @@ const grid=[
 			mesh.scale.setScalar( 3 );
 		
             scene.add( mesh );
-			mesh.position.y+=190+(100*y);
-			mesh.position.z+=250+(100*x);
+		mesh.position.y+=190;
+			mesh.position.z+=190+(400*z);
+			mesh.position.z+=250+(400*x);
         }
 
     } );
